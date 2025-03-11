@@ -2,127 +2,69 @@
 \chapter{Introduction}
 \label{chap:intro}
 
-The introduction to your document should lead your
-readers into your report and give them an idea of what to expect.
-You should
-begin with a general statement about the topic before moving on
-to specific issues. This strategy will help make the content
-accessible to your readers, especially those who are not specialists
-in the field. Illustrations, like Figure~\ref{fig:halwin}, often
-help to introduce the reader to the problem (from \cite{kjeldsen05cor}).
-
-\begin{figure}[h]
-    \center{\includegraphics[width=0.6\textwidth]{halden_window}}
-    \caption{Example of a window query in a map (map from www.finn.no)}
-    \label{fig:halwin}
-\end{figure}
-
+Chess-playing robots represent a fascinating intersection of robotics, computer spacial recognition, and artificial intelligence. These systems combine mechanical precision with computational intelligence to create machines capable of engaging in one of humanity's oldest strategic games. While chess computers have famously defeated grandmasters since the late 1990s, the physical manipulation of chess pieces by robotic systems presents unique engineering challenges beyond pure computational play.
 
 In the introduction, you should do the following, in approximately this order:
 \begin{compactitem}
   \item State the subject of your document as clearly as possible, and briefly explain why you are doing it (motivation)
-    \item Provide necessary and relevant background information (you will elaborate on this matter in Chapter \ref{chap:analysis}, Analysis)
+  \item Provide necessary and relevant background information (you will elaborate on this matter in Chapter \ref{chap:analysis}, Analysis)
   \item Define the problem you are addressing, your approach to the problem, and why this problem is important
   \item Define the scope of your work (in particular limitations and things you will {\em not} deal with)
   \item Describe your research method, i.e., how you are going to proceed to answer your research question
   \item Give an outline of the rest of the document
 \end{compactitem}
 
-You should think of the introduction  as the foundation of your master work, and accordingly you should put considerable efforts in getting it right. 
+You should think of the introduction  as the foundation of your master work, and accordingly you should put considerable efforts in getting it right.
 
 
 \section{Background and motivation}
 \label{sec:background-motivation}
 
-Here you will describe the topic of your research in broad terms, so that even your grandfather should be able to get the general picture. If you are cooperating with a company, research institute, etc., they should also be introduced. It is also important that you explain {\em why} your topic is interesting and worth researching.
+The development of chess-playing robots has evolved along several technological paths. Previous research has explored various approaches for piece detection and movement systems. For instance, solutions demonstrate a vision-based detection system using overhead cameras to identify piece positions and a robotic arm for movement, while other papers also shed light on systems utilizing magnetic sensors with a sliding mechanism for piece manipulation rather than an articulated robotic arm.
+Our project aims to combine the strengths of these approaches while introducing novel elements. By implementing hall effect sensors for piece detection and integrating a robotic arm for movement, we create a system that offers reliable position tracking without the lighting dependencies of vision systems, while maintaining the flexibility of a multi-axis robotic manipulator for piece movement.
 
-\lipsum[11-14]
-
+TODO: Further elaboration needed on the specific advantages of hall effect sensors over camera-based solutions and why this approach is interesting
 
 \subsection{Research question/Problem statement/Objectives}
 \label{sec:research-question}
 
-Every academic paper needs a clearly stated goal, concisely describing its purpose. The formulation depends on the type of document. Here we will see how it can be done in a bachelor’s and master’s thesis. You should put considerable effort in describing your goals, since they will be governing the rest of your work. However, goals may change during the projects, and may need revision now and then.
-
-\paragraph{Bachelor}
-
-A bachelor project is generally more practically oriented than a master’s thesis. Often, the pro-ject has an external project owner, like a company or an institution. The goal will be to provide something that can gain the project owner in some way. Hence, it is important to formulate the effects project owner want to achieve. Objectives often starts with “To\dots”.
-The following is from a project developing a social trading app for exchanging used books \cite{akeriversen20bah}:
-
+The primary objective of this project is to develop an integrated chess-playing robot system.
 \begin{description}
-\item [Objective 1] To connect people that enjoy books with each other.
-    \begin{description}
-    \item [Objective 1.1] To connect people that enjoy books with each other.
-    \item [Objective 1.2] To lessen the environmental effect that printing a new book has.
-    \end{description}
+  \item[Objective 1] To provide a seamless interface between the detection system, chess engine, and robotic control mechanisms
+        \begin{description}
+          \item[Objective 1.1] To accurately detect the position of all chess pieces on the board using hall effect sensors
+          \item[Objective 1.2] To process the board state and determining optimal moves using the Stockfish chess engine
+          \item[Objective 1.3] To precisely manipulate chess pieces using the supplied robotic arm
+        \end{description}
 \end{description}
 
-If the bachelor project is more theoretically oriented, the goals could be stated as in a master’s thesis, as described in the following section.
-
-\paragraph{Master}
-
-A research question\footnote{It is common with more than one question} is a formal statement of the goal of a study. The research question should clearly and concisely state what the study will investigate or attempt to prove. 
-Good research questions help to focus the research and the writing by providing a red thread through the project and the report. 
-
-The research question will surface both in the analysis of the problem, the choice of methods, the design and implementation of the project, and,  most importantly, it will be revisited in the discussion and conclusion parts of the report.
-
-The following example is from \cite{killerud14sgs}:
-
-\begin{quotation}
-As mentioned, opportunities arise with smart-phones for providing feedback on electricity consumption when coupled with a smart meter. A display such as the eWave, shown in Figure \ref{fig:display}, requires that a user take it upon themselves to check their consumption regularly. An application that notifies the user when consumption is high on a device that, for most parts of the day, is within reach of its owner does not require this initiation. However, it is not certain how such notifications will affect or be perceived by users. Further on in the report I attempt to shed some light on this.
-My research question consists of two parts. First, I wish to shed some light on the user experience:
-
-
-\begin{description}
-\item [RQ 1] Given immediate feedback on changes in the electricity consumption through their mobile phone, how do users respond?
-\end{description}
-
-Secondly, I wish to see if there is a trend towards a lowering of the electricity consumption peak:
-
-\begin{description}
-\item [RQ 2]  What impact does a mobile phone assistant have on electricity consumption patterns in an effect-based billing situation?
-\begin{description}
-\item [RQ 2.1] You may elaborate in a secondary research question.
-\end{description}
-\end{description}
-
-\begin{figure}[h]
-    \center
-    \includegraphics[width=0.6\textwidth]{display}
-    \caption{The eWave display being offered to Fredrikstad Energi’s customers. The display is 7 inches across, and is based on the Android platform (photo by Odin Media).}
-    \label{fig:display}
-\end{figure}
-
-\end{quotation}
+TODO: Further elaboration needed on specific performance metrics and success criteria
 
 \subsection{Method}
 \label{sec:method}
 
-Here you shall explain how you are going to find answers to the research questions. 
-The research method should be treated in more detail later in the report.
-Here is an example from \cite{nordenhaug11hmf} (it is somewhat sketchy, it is OK to be more detailed than this):
+Our approach to developing a chess-playing robot system involves three primary components working in concert:
+\begin{itemize}
+  \item A chessboard equipped with hall effect sensors to detect piece positions
+  \item A computational interface running Stockfish to calculate optimal chess moves
+  \item A robotic arm (provided by the school) for physical piece manipulation
+\end{itemize}
 
-\begin{quotation}
-The concept described in this thesis has evolved throughout the work with it, taking on an explorative approach. This process has been incremental using several rounds of iteration before ending
-up as a working prototype tested in a real-life setting, involving potential end users throughout the design.
-The below mentioned methods have been used in the process:
+The development process includes designing the sensor array for the chessboard, creating software interfaces between all components, calibrating the robotic arm for precise movement, and extensive testing of the integrated system.
 
-\begin{compactitem}
-\item Identification of research objectives
-\item Literature and case studies
-\item Development of mock-up videos
-\item Implementation of a high-fidelity prototype
-\item Field test and interview
-\item Testing the prototype on real representative users
-\end{compactitem}
-\end{quotation}
+TODO:  Further elaboration needed on specific technical implementation details and development methodology
 
 \subsection{Deliverables}
 \label{sec:deliverables}
 
-Here you describe the tangible outcomes of your projects. This obviously includes the thesis, in addition to software, prototypes and such.
-
-\lipsum[7-9]
+The project will result in the following deliverables:
+\begin{itemize}
+  \item A functional chess-playing robot system integrating all three components
+  \item Software for the detection system and computational interface
+  \item Technical documentation of the system architecture and integration
+  \item Performance analysis and evaluation
+  \item This comprehensive report documenting our approach, implementation, and findings
+\end{itemize}
 
 \section{Report Outline}
 \label{sec:outline}
@@ -130,15 +72,15 @@ Here you describe the tangible outcomes of your projects. This obviously include
 The last point in the introduction is an outline of the rest of the report, for example like this (from \cite{kjeldsen05cor}):
 
 \begin{quotation}
-Chapter 2 provides background information on range search and line simplification. In the section concerning range search, several data structures and algorithms are presented. The second section describes some of the different techniques developed for performing completely automated line simplification procedures. Finally, another proposed approach to combining the two problems is presented.
+  Chapter 2 provides background information on range search and line simplification. In the section concerning range search, several data structures and algorithms are presented. The second section describes some of the different techniques developed for performing completely automated line simplification procedures. Finally, another proposed approach to combining the two problems is presented.
 
-The third chapter gives a general description of the PST and what it can be used for. The interval
-stabbing problem is an important aspect of the work presented in this thesis, and the third chapter
-explains how to solve this with a PST. Next, the interval stabbing problem is expanded to a ``grid
-stabbing problem”, which also can be solved using a PST, and the reason for this is described. Chapter 4 gives a detailed description of the new data structure and the search methods that
-have been developed. After this, theoretical analyses are provided. This chapter also explains how
-an external version of it has been implemented, along with empirical test results to support the theory.
+  The third chapter gives a general description of the PST and what it can be used for. The interval
+  stabbing problem is an important aspect of the work presented in this thesis, and the third chapter
+  explains how to solve this with a PST. Next, the interval stabbing problem is expanded to a ``grid
+  stabbing problem”, which also can be solved using a PST, and the reason for this is described. Chapter 4 gives a detailed description of the new data structure and the search methods that
+  have been developed. After this, theoretical analyses are provided. This chapter also explains how
+  an external version of it has been implemented, along with empirical test results to support the theory.
 
-Chapter 5 presents suggestions for further work. Some work on the suggestions that are made has already been conducted, and this work is also described in this chapter. Finally, there is a chapter providing discussions and conclusions to whether or not the problem can be solved using the approach presented in this thesis.
+  Chapter 5 presents suggestions for further work. Some work on the suggestions that are made has already been conducted, and this work is also described in this chapter. Finally, there is a chapter providing discussions and conclusions to whether or not the problem can be solved using the approach presented in this thesis.
 \end{quotation}
 
