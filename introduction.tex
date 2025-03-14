@@ -2,39 +2,46 @@
 \chapter{Introduction}
 \label{chap:intro}
 
-Chess-playing robots represent a fascinating intersection of robotics, computer spacial recognition, and artificial intelligence. These systems combine mechanical precision with computational intelligence to create machines capable of engaging in one of humanity's oldest strategic games. While chess computers have famously defeated grandmasters since the late 1990s, the physical manipulation of chess pieces by robotic systems presents unique engineering challenges beyond pure computational play.
+Chess-playing robots, once relegated to the realm of science fiction, are now a tangible reality, embodying the convergence of robotics, computer vision, and artificial intelligence. However, creating a system that can not only think like a grandmaster but also move with the precision required to manipulate physical chess pieces presents a formidable engineering challenge.
+
+The quest to build a chess-playing robot has long been a benchmark for artificial intelligence and robotics. While the computational prowess of chess engines has long surpassed human capabilities, the development of robots that can physically interact with a chessboard remains an area of active research.
 
 \section{Background and motivation}
 \label{sec:background-motivation}
 
-The development of chess-playing robots has evolved along several technological paths. Previous research has explored various approaches for piece detection and movement systems. For instance, solutions demonstrate a vision-based detection system using overhead cameras to identify piece positions and a robotic arm for movement, while other papers also shed light on systems utilizing magnetic sensors with various movement mechanism for piece manipulation.
-Our project aims to combine the strengths of these approaches while introducing novel elements. By implementing hall effect sensors for piece detection and integrating an articulated robotic arm for movement, we create a system that offers reliable position tracking without the lighting dependencies of vision systems, while maintaining the flexibility of a multi-axis robotic manipulator for piece movement.
+The development of chess-playing robots has evolved along several technological paths. Previous research has explored various approaches for piece detection and movement systems. For instance, solutions demonstrate a vision-based detection system using overhead cameras to identify piece positions and a robotic arm for movement, while other papers also shed light on systems utilizing magnetic sensors with various movement mechanism for piece manipulation. While vision-based systems are common, they often suffer from limitations in varying lighting conditions and can be computationally expensive. Our approach aims to address these challenges by combining the strengths of these approaches while introducing novel elements. By implementing Hall effect sensors for piece detection and integrating an articulated robotic arm for movement, we create a system that offers reliable position tracking without the lighting dependencies of vision systems, while maintaining the flexibility of a multi-axis robotic manipulator for piece movement.
 
-TODO: Further elaboration needed on the specific advantages of hall effect sensors over camera-based solutions and why this approach is interesting
+TODO: Be less vague. Further elaboration needed on the specific advantages of Hall effect sensors over camera-based solutions and why this approach is interesting. References to existing research in this area would be beneficial instead of general statements like "solutions demonstrate."
 
 \subsection{Research question/Problem statement/Objectives}
 \label{sec:research-question}
+
+\begin{description}
+  \item[Question 1] Can a chess-playing robot system utilizing Hall effect sensors for piece detection and an articulated robotic arm for manipulation achieve accurate and reliable gameplay?
+  \item[Question 2] How does the performance of a Hall effect sensor-based chess-playing robot compare to that of a vision-based system in terms of accuracy, speed, and robustness?
+  \item[Question 3] What are the key design considerations and challenges in integrating Hall effect sensors, a chess engine, and a robotic arm into a functional chess-playing robot?
+\end{description}
 
 The primary objective of this project is to develop an integrated chess-playing robot system.
 \begin{description}
   \item[Objective 1] To provide a seamless interface between the detection system, chess engine, and robotic control mechanisms
         \begin{description}
-          \item[Objective 1.1] To accurately detect the position of all chess pieces on the board using hall effect sensors
-          \item[Objective 1.2] To process the board state and determining optimal moves using the Stockfish chess engine
-          \item[Objective 1.3] To precisely manipulate chess pieces using the supplied robotic arm
+          \item[Objective 1.1] To accurately detect the position of all chess pieces on the board using Hall effect sensors with a high detection success rate.
+          \item[Objective 1.2] To process the board state and determining optimal moves using the Stockfish chess engine with a fast perceivable response time.
+          \item[Objective 1.3] To precisely manipulate chess pieces using the supplied robotic arm, achieving accurate and efficient movement without knocking over any pieces.
         \end{description}
 \end{description}
 
-TODO: Further elaboration needed on specific performance metrics and success criteria
+TODO: Further elaboration needed on specific performance metrics and success criteria. For example, "high detection success rate" should be quantified. We are not sure what success rate is feasible with Hall effect sensors, so this will require further research or experimentation to determine.
 
 \subsection{Method}
 \label{sec:method}
 
 Our approach to developing a chess-playing robot system involves three primary components working in concert:
 \begin{itemize}
-  \item A chessboard equipped with hall effect sensors to detect piece positions
-  \item A computational interface running Stockfish to calculate optimal chess moves
-  \item A robotic arm (provided by the school) for physical piece manipulation
+  \item The chessboard will be instrumented with a grid of Hall effect sensors embedded beneath each square, allowing for discrete detection of piece presence and absence.
+  \item Software interfaces will be developed using [Python, problably] to facilitate communication between the sensor array, the Stockfish chess engine, and the robotic arm's control system.
+  \item Calibration procedures will involve establishing a precise mapping between the robotic arm's coordinate system and the chessboard's grid.
 \end{itemize}
 
 The development process includes designing the sensor array for the chessboard, creating software interfaces between all components, calibrating the robotic arm for precise movement, and extensive testing of the integrated system.
@@ -46,18 +53,18 @@ TODO:  Further elaboration needed on specific technical implementation details a
 
 The project will result in the following deliverables:
 \begin{itemize}
-  \item A functional chess-playing robot system integrating all three components
-  \item Software for the detection system and computational interface
-  \item Technical documentation of the system architecture and integration
-  \item Performance analysis and evaluation
-  \item This comprehensive report documenting our approach, implementation, and findings
+  \item A functional chess-playing robot system integrating all three components.
+  \item Software for the detection system and computational interface.
+  \item Technical documentation of the system architecture and integration.
+  \item Performance analysis and evaluation of the system against established metrics like accuracy, speed of play, and robustness.
+  \item This comprehensive report documenting our approach, implementation, and findings.
 \end{itemize}
 
 Beyond academic objectives, this chess-playing robot has several practical applications. As an educational tool, it can demonstrate chess strategies to beginners while providing a tangible interface for learning. In human-robot interaction research, the system offers a structured environment to study collaborative behavior and user experience with robotic systems. Additionally, the project serves as a valuable testbed for sensor fusion techniques and precision movement algorithms applicable to industrial automation and assistive robotics. These broader applications enhance the project's impact beyond the immediate technical accomplishments of the chess-playing capabilities.
 
 \section{Report Outline}
 
-Chapter 2 examines the current state of chess-playing robots, providing detailed comparisons between detection technologies with focus on hall effect sensors versus vision-based systems. It presents system requirements derived from this analysis and establishes performance criteria. The third chapter details the system architecture, including sensor array design, software interfaces, and integration with the robotic arm. This chapter explains design decisions and component selection rationale to fulfill the requirements previously established.
+Chapter 2 examines the current state of chess-playing robots, focusing on the challenges and limitations of existing detection and manipulation techniques in chess-playing robots. This chapter will be providing detailed comparisons between detection technologies with focus on Hall effect sensors versus vision-based systems. It presents system requirements derived from this analysis and establishes performance criteria. The third chapter details the system architecture, including sensor array design based on TO92UA Hall effect sensors, software interfaces, and integration with the robotic arm. This chapter explains design decisions and component selection rationale to fulfill the requirements previously established.
 
 Chapter 4 describes the physical construction of the detection board, software development for all subsystems, and integration challenges. This chapter documents practical engineering solutions and implementation details for replication.
 The fifth chapter presents methodology and results from testing the completed system, analyzing detection accuracy, movement precision, and overall system performance against established metrics. Performance limitations and their causes are identified.
